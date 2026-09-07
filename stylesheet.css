@@ -1,0 +1,300 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+}
+
+/* Base Background */
+body {
+    background: #120b75;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    color: #f8fafc;
+    overflow: hidden;
+    position: relative;
+}
+
+/* Smooth Liquid Glowing Blobs Container */
+.blob-container {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    z-index: -1;
+    top: 0;
+    left: 0;
+    filter: blur(90px);
+    opacity: 0.75;
+}
+
+.blob {
+    position: absolute;
+    border-radius: 50%;
+    will-change: transform;
+    animation: smoothFlow 18s infinite alternate ease-in-out;
+}
+
+.blob-1 {
+    width: 450px;
+    height: 450px;
+    background: #ed1c5b;
+    top: -10%;
+    left: -10%;
+}
+
+.blob-2 {
+    width: 500px;
+    height: 500px;
+    background: #ef7b16;
+    bottom: -15%;
+    right: -10%;
+    animation-delay: -4s;
+    animation-duration: 22s;
+}
+
+.blob-3 {
+    width: 380px;
+    height: 380px;
+    background: #892ce1;
+    top: 10%;
+    left: 20%;
+    animation-delay: -8s;
+    animation-duration: 25s;
+}
+
+.blob-4 {
+    width: 420px;
+    height: 420px;
+    background: #24a178;
+    bottom: 20%;
+    left: 10%;
+    animation-delay: -12s;
+    animation-duration: 20s;
+}
+
+@keyframes smoothFlow {
+    0% { transform: translate(0px, 0px) scale(2); }
+    33% { transform: translate(60px, -50px) scale(1.15); }
+    66% { transform: translate(-40px, 70px) scale(0.9); }
+    100% { transform: translate(50px, 40px) scale(1.05); }
+}
+
+/* Floating Navbar with iOS Blur */
+.navbar {
+    position: absolute;
+    top: 30px;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 650px;
+    background: rgba(255, 255, 255, 0.06);
+    backdrop-filter: blur(25px);
+    -webkit-backdrop-filter: blur(25px);
+    padding: 0.8rem 1.8rem;
+    border-radius: 30px;
+    border: 1px solid rgba(255, 255, 255, 0.15);
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.3);
+    z-index: 100;
+}
+
+.logo {
+    font-weight: 700;
+    font-size: 1.1rem;
+    color: #ffffff;
+}
+
+.navbar nav {
+    display: flex;
+    gap: 1.2rem;
+}
+
+.navbar nav a {
+    text-decoration: none;
+    color: #cbd5e1;
+    font-weight: 500;
+    font-size: 0.95rem;
+    transition: color 0.2s ease;
+}
+
+.navbar nav a:hover {
+    color: #0d0a1a;
+    font-size: 15px;
+}
+
+/* Ultra Translucent iOS Glassmorphism Card */
+.glass-card {
+    background: rgba(255, 255, 255, 0.08);
+    backdrop-filter: blur(30px);
+    -webkit-backdrop-filter: blur(30px);
+    border: 1px solid rgba(255, 255, 255, 0.18);
+    border-radius: 28px;
+    padding: 3rem 2.5rem;
+    width: 650px;
+    box-shadow: 0 30px 60px rgba(0, 0, 0, 0.4);
+    text-align: left;
+    animation: slideUp 1s cubic-bezier(0.16, 1, 0.3, 0.8) forwards;
+}
+
+@keyframes slideUp {
+    from {
+        opacity: 0;
+        transform: translateY(25px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+h1, h2 {
+    font-size: 2.2rem;
+    font-weight: 700;
+    color: #ffffff;
+    margin-bottom: 1rem;
+}
+
+p {
+    font-size: 1.1rem;
+    color: #cbd5e1;
+    line-height: 1.6;
+}
+
+.highlight {
+    color: #38bdf8;
+    text-decoration: none;
+}
+
+.highlight:hover {
+    text-decoration: underline;
+}
+.project-img{
+    width: 100%;
+    height: 220px;
+    object-fit: contain;
+    object-position: top;
+    border-radius: 12px;
+    margin-bottom: 12px;
+    border: 1px solid rgba(255, 255, 255, 0.15);
+}
+/* Slider & Media Container Styling */
+.slider-container, .media-container {
+    position: relative;
+    width: 100%;
+    height: 200px;
+    background: rgba(0, 0, 0, 0.3);
+    border-radius: 12px;
+    overflow: hidden;
+    margin-bottom: 12px;
+    border: 1px solid rgba(255, 255, 255, 0.15);
+}
+
+.slides {
+    position: relative;
+    width: 100%;
+    height: 100%;
+}
+
+.slide-img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    opacity: 0;
+    transition: opacity 0.4s ease-in-out;
+}
+
+.slide-img.active {
+    opacity: 1;
+}
+
+/* Slider Controls Buttons */
+.slide-btn {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background: rgba(0, 0, 0, 0.6);
+    color: white;
+    border: none;
+    padding: 6px 10px;
+    cursor: pointer;
+    border-radius: 50%;
+    font-size: 14px;
+    transition: background 0.2s;
+    z-index: 10;
+}
+
+.slide-btn:hover {
+    background: rgba(0, 0, 0, 0.9);
+}
+
+.slide-btn.prev {
+    left: 10px;
+}
+
+.slide-btn.next {
+    right: 10px;
+}
+
+/* Video Styling */
+.project-video {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+    border-radius: 12px;
+    background: #000;
+}
+
+.media-container img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+}
+/* Projects Page Main Card Scroll Fix */
+.project-page-card {
+    max-height: 75vh;
+    overflow-y: auto;
+    padding-right: 10px;
+}
+
+/* Custom Scrollbar */
+.project-page-card::-webkit-scrollbar {
+    width: 6px;
+}
+
+.project-page-card::-webkit-scrollbar-track {
+    background: rgba(255, 255, 255, 0.05);
+    border-radius: 10px;
+}
+
+.project-page-card::-webkit-scrollbar-thumb {
+    background: rgba(255, 255, 255, 0.25);
+    border-radius: 10px;
+}
+
+.projects-scroll-container {
+    margin-top: 15px;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.project-card {
+    background: rgba(255, 255, 255, 0.06);
+    border: 1px solid rgba(255, 255, 255, 0.15);
+    border-radius: 16px;
+    padding: 15px;
+    backdrop-filter: blur(12px);
+    transition: transform 0.2s ease;
+}
+
+.project-card:hover {
+    transform: translateY(-2px);
+}

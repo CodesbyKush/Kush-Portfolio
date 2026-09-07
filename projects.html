@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Projects - Kush</title>
+    <link rel="stylesheet" href="stylesheet.css">
+</head>
+<body>
+    <div class="blob-container">
+        <div class="blob blob-1"></div>
+        <div class="blob blob-2"></div>
+        <div class="blob blob-3"></div>
+        <div class="blob blob-4"></div>
+    </div>
+
+    <header class="navbar">
+        <div class="logo">Kush.dev</div>
+        <nav>
+            <a href="main.html">Home</a>
+            <a href="about.html">About</a>
+            <a href="skills.html">Skills</a>
+            <a href="projects.html">Projects</a>
+            <a href="contact.html">Contact</a>
+        </nav>
+    </header>
+
+    <main class="glass-card project-page-card">
+        <h2>My Projects</h2>
+        <p>Explore my data analytics dashboards, web apps, and video demos.</p>
+        
+        <div class="projects-scroll-container">
+<!---------------------------------------Project 1------------------------------------------->
+            <div class="project-card">
+                <div class="project-info">
+                    <h3>Tokyo Stock Exchange Dashboard</h3>
+                    <div class="slider-container" id="slider1">
+                        <div class="slides">
+                        <img src="tkse.jpg" class="slide-img active" alt="Project 1 Image 1">
+                        </div>
+                    </div>
+                    <p>This interactive Tokyo Stock Exchange Dashboard is designed to track and visualize core financial market movements, featuring major tickers like N225 and 7203.T. Built using advanced Power BI capabilities, it incorporates dynamic DAX measures and unpivoted trend analyses to provide a granular look at trading volumes and portfolio distributions. The interface offers multiple comprehensive views that seamlessly convert raw stock exchange datasets into clear, actionable visual insights. It serves as a robust analytical tool for monitoring overall market returns and comparing ticker-specific performances at a glance.</p>
+                </div>
+            </div>
+<!---------------------------------------Project 2------------------------------------------->
+            <div class="project-card">
+                <div class="slider-container" id="slider2">
+                    <div class="slides">
+                        <img src="spa1.jpg" class="slide-img active" alt="Project 2 Image 1">
+                        <img src="spa2.jpg" class="slide-img active" alt="Project 2 Image 1">
+                        <img src="spa3.jpg" class="slide-img active" alt="Project 2 Image 1">
+                        <img src="spa4.jpg" class="slide-img active" alt="Project 2 Image 1">
+                    </div>
+                    <button class="slide-btn prev" onclick="moveSlide('slider2', -1)">&#10094;</button>
+                    <button class="slide-btn next" onclick="moveSlide('slider2', 1)">&#10095;</button>
+                </div>
+                <div class="project-info">
+                    <h3>Supply Chain analysis</h3>
+                    <p>This comprehensive Inventory and Supply Chain Management Analysis dashboard provides deep visibility into complex operational workflows and logistics performance. Built to process large-scale logistical metrics, it features detailed visual breakdowns of warehouse utilization, regional transportation costs, and units sold over time. The interactive interface also highlights crucial supply chain indicators, including average lead times by category, backorder counts by order status, and inventory levels segmented across regions. By turning raw supply chain data into dynamic visual cards and charts, it enables efficient monitoring of storage efficiency, operational bottlenecks, and automated processing pipelines.</p>
+                </div>
+            </div>
+<!---------------------------------------Project 3------------------------------------------->
+            <div class="project-card">
+                <div class="media-container">
+                    <video controls class="project-video">
+                        <source src="monster.mp4" type="video/mp4">
+                        Your browser does not support the video tag.
+                    </video>
+                </div>
+                <div class="project-info">
+                    <h3>Monster Energy Drink Creative Sales Dashboard</h3>
+                    <p>This dynamic Monster Energy Drink Creative Sales Dashboard highlights an engaging multimedia approach to product performance tracking. Featuring a featured video walkthrough, it monitors key commercial metrics such as total revenue, expenses amounting to $560.00 million, and a total sales volume of 512 units. The interface also incorporates product-specific details like a calorie count of 220 and a caffeine level of 160. By blending striking product visuals with critical financial data, it delivers an impactful showcase of query performance and sales analytics.</p>
+                </div>
+            </div>
+<!---------------------------------------Project 4------------------------------------------->
+            <div class="project-card">
+                <div class="media-container">
+                    <img src="cfd1.jpg" alt="Single Project Image" class="project-img">
+                </div>
+                <div class="project-info">
+                    <h3>Credit card fraud risk analysis</h3>
+                    <p>This analytical Credit Card Fraud Risk Analysis dashboard provides a clean visual breakdown built for fast database auditing and security reviews. It features an interactive filter panel on the left alongside comprehensive metrics like total transaction amounts categorized by card type and fraud type. The interface highlights critical risk factors, including regional transaction breakdowns by cities and risk levels categorized across various fraud types. By structuring complex transactional datasets into clear charts and doughnut graphs, it enables rapid identification of suspicious patterns and vulnerable sectors.</p>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <script>
+        function moveSlide(sliderId, direction) {
+            const slider = document.getElementById(sliderId);
+            const slides = slider.querySelectorAll('.slide-img');
+            let currentIndex = Array.from(slides).findIndex(slide => slide.classList.contains('active'));
+            
+            slides[currentIndex].classList.remove('active');
+            currentIndex = (currentIndex + direction + slides.length) % slides.length;
+            slides[currentIndex].classList.add('active');
+        }
+    </script>
+</body>
+</html>
