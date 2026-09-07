@@ -298,3 +298,63 @@ p {
 .project-card:hover {
     transform: translateY(-2px);
 }
+/* =========================================
+   Mobile Responsiveness Fixes
+   ========================================= */
+
+@media screen and (max-width: 768px) {
+    /* Body padding */
+    body {
+        padding: 20px 15px;
+        overflow-y: auto; /* Mobile par scroll enable karne ke liye */
+        height: auto;
+        min-height: 100vh;
+    }
+
+    /* Navbar mobile fit */
+    .navbar {
+        width: 92% !important;
+        padding: 0.6rem 1rem;
+        top: 15px;
+        flex-direction: column;
+        gap: 10px;
+        border-radius: 20px;
+    }
+
+    .navbar nav {
+        gap: 0.8rem;
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+
+    .navbar nav a {
+        font-size: 0.85rem;
+    }
+
+    /* Glass card mobile width */
+    .glass-card, 
+    .project-page-card {
+        width: 100% !important;
+        max-width: 100% !important;
+        padding: 1.8rem 1.2rem;
+        margin-top: 80px; /* Navbar ke neeche space dene ke liye */
+        border-radius: 20px;
+    }
+
+    /* Headings text size mobile */
+    h1, h2 {
+        font-size: 1.6rem !important;
+    }
+
+    p {
+        font-size: 0.95rem !important;
+    }
+
+    /* Project images videos height adjust */
+    .project-img, 
+    .slider-container, 
+    .media-container, 
+    .project-video {
+        height: 170px !important;
+    }
+}
